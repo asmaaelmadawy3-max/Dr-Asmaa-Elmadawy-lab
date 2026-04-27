@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Results</title>
+
+<style>
+body{
+    font-family: Arial;
+    direction: rtl;
+    background:#f4f4f4;
+    margin:0;
+}
+
+header{
+    background:#2e7d32;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    margin-top:15px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.result{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>معمل د. أسماء المعداوي</h2>
+<p>عرض النتائج أونلاين</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h3>دخول النتيجة</h3>
+<input type="text" id="patientId" placeholder="اكتب رقم المريض">
+<button onclick="showResult()">عرض النتيجة</button>
+</div>
+
+<div class="card result" id="resultBox">
+<h3>نتيجة التحليل</h3>
+<p>اسم المريض: أحمد محمد</p>
+<p>الكوليسترول: 180 طبيعي</p>
+<p>Hb: 13.5</p>
+<p>Vitamin D: 32</p>
+</div>
+
+</div>
+
+<script>
+function showResult(){
+    let id = document.getElementById("patientId").value;
+
+    if(id !== ""){
+        document.getElementById("resultBox").style.display = "block";
+    }else{
+        alert("من فضلك اكتب رقم المريض");
+    }
+}
+</script>
+
+</body>
+</html>
